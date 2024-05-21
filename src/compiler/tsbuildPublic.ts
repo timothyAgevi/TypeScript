@@ -1960,6 +1960,7 @@ function updateOutputTimestampsWorker<T extends BuilderProgram>(
                 outputTimeStampMap.set(path, now);
                 modifiedOutputs!.add(path);
             }
+            if (file === buildInfoPath) getBuildInfoCacheEntry(state, buildInfoPath, projectPath)!.modifiedTime = now;
         }
     }
 
