@@ -131,6 +131,15 @@ var library_1 = require("../Library/library");
 (0, library_1.createSomeObject)().message;
 
 
+//// [/user/username/projects/sample1/App/tsconfig.tsbuildinfo]
+{"version":"FakeTSVersion"}
+
+//// [/user/username/projects/sample1/App/tsconfig.tsbuildinfo.readable.baseline.txt]
+{
+  "version": "FakeTSVersion",
+  "size": 27
+}
+
 
 PolledWatches::
 /a/lib/package.json: *new*
@@ -174,6 +183,7 @@ Program root files: [
 Program options: {
   "composite": true,
   "watch": true,
+  "tscBuild": true,
   "configFilePath": "/user/username/projects/sample1/Library/tsconfig.json"
 }
 Program structureReused: Not
@@ -194,6 +204,7 @@ Program root files: [
 ]
 Program options: {
   "watch": true,
+  "tscBuild": true,
   "configFilePath": "/user/username/projects/sample1/App/tsconfig.json"
 }
 Program structureReused: Not
@@ -337,6 +348,8 @@ Output::
 
 
 
+//// [/user/username/projects/sample1/App/tsconfig.tsbuildinfo] file written with same contents
+//// [/user/username/projects/sample1/App/tsconfig.tsbuildinfo.readable.baseline.txt] file written with same contents
 
 
 Program root files: [
@@ -345,6 +358,7 @@ Program root files: [
 Program options: {
   "composite": true,
   "watch": true,
+  "tscBuild": true,
   "configFilePath": "/user/username/projects/sample1/Library/tsconfig.json"
 }
 Program structureReused: Not
@@ -363,6 +377,7 @@ Program root files: [
 ]
 Program options: {
   "watch": true,
+  "tscBuild": true,
   "configFilePath": "/user/username/projects/sample1/App/tsconfig.json"
 }
 Program structureReused: Not
@@ -495,6 +510,8 @@ Output::
 
 
 //// [/user/username/projects/sample1/App/app.js] file written with same contents
+//// [/user/username/projects/sample1/App/tsconfig.tsbuildinfo] file written with same contents
+//// [/user/username/projects/sample1/App/tsconfig.tsbuildinfo.readable.baseline.txt] file written with same contents
 
 
 Program root files: [
@@ -503,6 +520,7 @@ Program root files: [
 Program options: {
   "composite": true,
   "watch": true,
+  "tscBuild": true,
   "configFilePath": "/user/username/projects/sample1/Library/tsconfig.json"
 }
 Program structureReused: Not
@@ -521,6 +539,7 @@ Program root files: [
 ]
 Program options: {
   "watch": true,
+  "tscBuild": true,
   "configFilePath": "/user/username/projects/sample1/App/tsconfig.json"
 }
 Program structureReused: Not

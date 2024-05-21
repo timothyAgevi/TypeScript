@@ -85,6 +85,7 @@ Program options: {
   "noEmit": true,
   "outFile": "/user/username/projects/out.js",
   "watch": true,
+  "tscBuild": true,
   "configFilePath": "/user/username/projects/myproject/tsconfig.json"
 }
 Program structureReused: Not
@@ -138,6 +139,7 @@ Program options: {
   "noEmit": true,
   "outFile": "/user/username/projects/out.js",
   "watch": true,
+  "tscBuild": true,
   "configFilePath": "/user/username/projects/myproject/tsconfig.json"
 }
 Program structureReused: Not
@@ -190,6 +192,7 @@ Program options: {
   "noEmit": true,
   "outFile": "/user/username/projects/out.js",
   "watch": true,
+  "tscBuild": true,
   "configFilePath": "/user/username/projects/myproject/tsconfig.json"
 }
 Program structureReused: Not

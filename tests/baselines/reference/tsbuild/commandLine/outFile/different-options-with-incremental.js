@@ -58,6 +58,7 @@ Program options: {
   "incremental": true,
   "outFile": "/src/outFile.js",
   "module": 2,
+  "tscBuild": true,
   "configFilePath": "/src/project/tsconfig.json"
 }
 Program structureReused: Not
@@ -212,6 +213,7 @@ Program options: {
   "outFile": "/src/outFile.js",
   "module": 2,
   "sourceMap": true,
+  "tscBuild": true,
   "configFilePath": "/src/project/tsconfig.json"
 }
 Program structureReused: Not
@@ -364,6 +366,7 @@ Program options: {
   "incremental": true,
   "outFile": "/src/outFile.js",
   "module": 2,
+  "tscBuild": true,
   "configFilePath": "/src/project/tsconfig.json"
 }
 Program structureReused: Not
@@ -513,6 +516,7 @@ Program options: {
   "outFile": "/src/outFile.js",
   "module": 2,
   "declaration": true,
+  "tscBuild": true,
   "configFilePath": "/src/project/tsconfig.json"
 }
 Program structureReused: Not
@@ -650,6 +654,7 @@ Program options: {
   "module": 2,
   "declaration": true,
   "declarationMap": true,
+  "tscBuild": true,
   "configFilePath": "/src/project/tsconfig.json"
 }
 Program structureReused: Not
@@ -808,6 +813,7 @@ Program options: {
   "incremental": true,
   "outFile": "/src/outFile.js",
   "module": 2,
+  "tscBuild": true,
   "configFilePath": "/src/project/tsconfig.json"
 }
 Program structureReused: Not
@@ -963,6 +969,7 @@ Program options: {
   "module": 2,
   "declaration": true,
   "declarationMap": true,
+  "tscBuild": true,
   "configFilePath": "/src/project/tsconfig.json"
 }
 Program structureReused: Not
@@ -1103,6 +1110,7 @@ Program options: {
   "outFile": "/src/outFile.js",
   "module": 2,
   "inlineSourceMap": true,
+  "tscBuild": true,
   "configFilePath": "/src/project/tsconfig.json"
 }
 Program structureReused: Not
@@ -1253,6 +1261,7 @@ Program options: {
   "outFile": "/src/outFile.js",
   "module": 2,
   "sourceMap": true,
+  "tscBuild": true,
   "configFilePath": "/src/project/tsconfig.json"
 }
 Program structureReused: Not
@@ -1405,6 +1414,7 @@ Program options: {
   "incremental": true,
   "outFile": "/src/outFile.js",
   "module": 2,
+  "tscBuild": true,
   "configFilePath": "/src/project/tsconfig.json"
 }
 Program structureReused: Not
@@ -1555,6 +1565,7 @@ Program options: {
   "module": 2,
   "declaration": true,
   "declarationMap": true,
+  "tscBuild": true,
   "configFilePath": "/src/project/tsconfig.json"
 }
 Program structureReused: Not
