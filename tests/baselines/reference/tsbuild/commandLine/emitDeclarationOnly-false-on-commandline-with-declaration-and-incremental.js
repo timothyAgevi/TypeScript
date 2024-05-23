@@ -146,7 +146,13 @@ Program files::
 
 No cached semantic diagnostics in the builder::
 
-No shapes updated in the builder::
+Shape signatures in builder refreshed for::
+/lib/lib.d.ts (used version)
+/src/project2/src/e.ts (computed .d.ts during emit)
+/src/project1/src/a.d.ts (used version)
+/src/project2/src/f.ts (computed .d.ts during emit)
+/src/project1/src/b.d.ts (used version)
+/src/project2/src/g.ts (computed .d.ts during emit)
 
 
 //// [/src/project1/src/a.d.ts]
@@ -277,8 +283,20 @@ export declare const d = 10;
   "size": 1367
 }
 
+//// [/src/project2/src/e.d.ts]
+export declare const e = 10;
+
+
+//// [/src/project2/src/f.d.ts]
+export declare const f = 10;
+
+
+//// [/src/project2/src/g.d.ts]
+export declare const g = 10;
+
+
 //// [/src/project2/src/tsconfig.tsbuildinfo]
-{"program":{"fileNames":["../../../lib/lib.d.ts","./e.ts","../../project1/src/a.d.ts","./f.ts","../../project1/src/b.d.ts","./g.ts"],"fileInfos":[{"version":"3858781397-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };","signature":false,"affectsGlobalScope":true,"impliedFormat":1},{"version":"-13789510868-export const e = 10;","signature":false,"impliedFormat":1},{"version":"-3497920574-export declare const a = 10;\n","signature":false,"impliedFormat":1},{"version":"-2015135303-import { a } from \"../../project1/src/a\"; export const f = a;","signature":false,"impliedFormat":1},{"version":"-3829150557-export declare const b = 10;\n","signature":false,"impliedFormat":1},{"version":"-2047954019-import { b } from \"../../project1/src/b\"; export const g = b;","signature":false,"impliedFormat":1}],"root":[2,4,6],"options":{"declaration":true,"emitDeclarationOnly":true},"fileIdsList":[[3],[5]],"referencedMap":[[4,1],[6,2]],"changeFileSet":[1,3,5,2,4,6]},"version":"FakeTSVersion"}
+{"program":{"fileNames":["../../../lib/lib.d.ts","./e.ts","../../project1/src/a.d.ts","./f.ts","../../project1/src/b.d.ts","./g.ts"],"fileInfos":[{"version":"3858781397-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };","affectsGlobalScope":true,"impliedFormat":1},{"version":"-13789510868-export const e = 10;","signature":"-4822840506-export declare const e = 10;\n","impliedFormat":1},{"version":"-3497920574-export declare const a = 10;\n","impliedFormat":1},{"version":"-2015135303-import { a } from \"../../project1/src/a\"; export const f = a;","signature":"-5154070489-export declare const f = 10;\n","impliedFormat":1},{"version":"-3829150557-export declare const b = 10;\n","impliedFormat":1},{"version":"-2047954019-import { b } from \"../../project1/src/b\"; export const g = b;","signature":"-5485300472-export declare const g = 10;\n","impliedFormat":1}],"root":[2,4,6],"options":{"declaration":true,"emitDeclarationOnly":true},"fileIdsList":[[3],[5]],"referencedMap":[[4,1],[6,2]]},"hasErrors":true,"version":"FakeTSVersion"}
 
 //// [/src/project2/src/tsconfig.tsbuildinfo.readable.baseline.txt]
 {
@@ -303,57 +321,60 @@ export declare const d = 10;
       "../../../lib/lib.d.ts": {
         "original": {
           "version": "3858781397-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };",
-          "signature": false,
           "affectsGlobalScope": true,
           "impliedFormat": 1
         },
         "version": "3858781397-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };",
+        "signature": "3858781397-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };",
         "affectsGlobalScope": true,
         "impliedFormat": "commonjs"
       },
       "./e.ts": {
         "original": {
           "version": "-13789510868-export const e = 10;",
-          "signature": false,
+          "signature": "-4822840506-export declare const e = 10;\n",
           "impliedFormat": 1
         },
         "version": "-13789510868-export const e = 10;",
+        "signature": "-4822840506-export declare const e = 10;\n",
         "impliedFormat": "commonjs"
       },
       "../../project1/src/a.d.ts": {
         "original": {
           "version": "-3497920574-export declare const a = 10;\n",
-          "signature": false,
           "impliedFormat": 1
         },
         "version": "-3497920574-export declare const a = 10;\n",
+        "signature": "-3497920574-export declare const a = 10;\n",
         "impliedFormat": "commonjs"
       },
       "./f.ts": {
         "original": {
           "version": "-2015135303-import { a } from \"../../project1/src/a\"; export const f = a;",
-          "signature": false,
+          "signature": "-5154070489-export declare const f = 10;\n",
           "impliedFormat": 1
         },
         "version": "-2015135303-import { a } from \"../../project1/src/a\"; export const f = a;",
+        "signature": "-5154070489-export declare const f = 10;\n",
         "impliedFormat": "commonjs"
       },
       "../../project1/src/b.d.ts": {
         "original": {
           "version": "-3829150557-export declare const b = 10;\n",
-          "signature": false,
           "impliedFormat": 1
         },
         "version": "-3829150557-export declare const b = 10;\n",
+        "signature": "-3829150557-export declare const b = 10;\n",
         "impliedFormat": "commonjs"
       },
       "./g.ts": {
         "original": {
           "version": "-2047954019-import { b } from \"../../project1/src/b\"; export const g = b;",
-          "signature": false,
+          "signature": "-5485300472-export declare const g = 10;\n",
           "impliedFormat": 1
         },
         "version": "-2047954019-import { b } from \"../../project1/src/b\"; export const g = b;",
+        "signature": "-5485300472-export declare const g = 10;\n",
         "impliedFormat": "commonjs"
       }
     },
@@ -382,18 +403,11 @@ export declare const d = 10;
       "./g.ts": [
         "../../project1/src/b.d.ts"
       ]
-    },
-    "changeFileSet": [
-      "../../../lib/lib.d.ts",
-      "../../project1/src/a.d.ts",
-      "../../project1/src/b.d.ts",
-      "./e.ts",
-      "./f.ts",
-      "./g.ts"
-    ]
+    }
   },
+  "hasErrors": true,
   "version": "FakeTSVersion",
-  "size": 1368
+  "size": 1418
 }
 
 
@@ -410,7 +424,7 @@ Output::
 
 [[90mHH:MM:SS AM[0m] Project 'src/project1/src/tsconfig.json' is up to date because newest input 'src/project1/src/d.ts' is older than output 'src/project1/src/tsconfig.tsbuildinfo'
 
-[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because buildinfo file 'src/project2/src/tsconfig.tsbuildinfo' indicates that some of the changes were not emitted
+[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because buildinfo file 'src/project2/src/tsconfig.tsbuildinfo' indicates that program had errors.
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project2/src/tsconfig.json'...
 
@@ -472,7 +486,7 @@ Output::
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project1/src/tsconfig.json'...
 
-[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because buildinfo file 'src/project2/src/tsconfig.tsbuildinfo' indicates that some of the changes were not emitted
+[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because buildinfo file 'src/project2/src/tsconfig.tsbuildinfo' indicates that program had errors.
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project2/src/tsconfig.json'...
 
@@ -671,7 +685,7 @@ Output::
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project1/src/tsconfig.json'...
 
-[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because buildinfo file 'src/project2/src/tsconfig.tsbuildinfo' indicates that some of the changes were not emitted
+[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because buildinfo file 'src/project2/src/tsconfig.tsbuildinfo' indicates that program had errors.
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project2/src/tsconfig.json'...
 
@@ -884,8 +898,31 @@ exports.d = b_1.b;
   "size": 1382
 }
 
+//// [/src/project2/src/e.js]
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.e = void 0;
+exports.e = 10;
+
+
+//// [/src/project2/src/f.js]
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.f = void 0;
+var a_1 = require("../../project1/src/a");
+exports.f = a_1.a;
+
+
+//// [/src/project2/src/g.js]
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.g = void 0;
+var b_1 = require("../../project1/src/b");
+exports.g = b_1.b;
+
+
 //// [/src/project2/src/tsconfig.tsbuildinfo]
-{"program":{"fileNames":["../../../lib/lib.d.ts","./e.ts","../../project1/src/a.d.ts","./f.ts","../../project1/src/b.d.ts","./g.ts"],"fileInfos":[{"version":"3858781397-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };","signature":false,"affectsGlobalScope":true,"impliedFormat":1},{"version":"-13789510868-export const e = 10;","signature":false,"impliedFormat":1},{"version":"-3497920574-export declare const a = 10;\n","signature":false,"impliedFormat":1},{"version":"-2015135303-import { a } from \"../../project1/src/a\"; export const f = a;","signature":false,"impliedFormat":1},{"version":"-3829150557-export declare const b = 10;\n","signature":false,"impliedFormat":1},{"version":"-2047954019-import { b } from \"../../project1/src/b\"; export const g = b;","signature":false,"impliedFormat":1}],"root":[2,4,6],"options":{"declaration":true,"emitDeclarationOnly":false},"fileIdsList":[[3],[5]],"referencedMap":[[4,1],[6,2]],"changeFileSet":[1,3,5,2,4,6]},"version":"FakeTSVersion"}
+{"program":{"fileNames":["../../../lib/lib.d.ts","./e.ts","../../project1/src/a.d.ts","./f.ts","../../project1/src/b.d.ts","./g.ts"],"fileInfos":[{"version":"3858781397-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };","affectsGlobalScope":true,"impliedFormat":1},{"version":"-13789510868-export const e = 10;","signature":"-4822840506-export declare const e = 10;\n","impliedFormat":1},{"version":"-3497920574-export declare const a = 10;\n","impliedFormat":1},{"version":"-2015135303-import { a } from \"../../project1/src/a\"; export const f = a;","signature":"-5154070489-export declare const f = 10;\n","impliedFormat":1},{"version":"-3829150557-export declare const b = 10;\n","impliedFormat":1},{"version":"-2047954019-import { b } from \"../../project1/src/b\"; export const g = b;","signature":"-5485300472-export declare const g = 10;\n","impliedFormat":1}],"root":[2,4,6],"options":{"declaration":true,"emitDeclarationOnly":false},"fileIdsList":[[3],[5]],"referencedMap":[[4,1],[6,2]]},"hasErrors":true,"version":"FakeTSVersion"}
 
 //// [/src/project2/src/tsconfig.tsbuildinfo.readable.baseline.txt]
 {
@@ -910,57 +947,60 @@ exports.d = b_1.b;
       "../../../lib/lib.d.ts": {
         "original": {
           "version": "3858781397-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };",
-          "signature": false,
           "affectsGlobalScope": true,
           "impliedFormat": 1
         },
         "version": "3858781397-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };",
+        "signature": "3858781397-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };",
         "affectsGlobalScope": true,
         "impliedFormat": "commonjs"
       },
       "./e.ts": {
         "original": {
           "version": "-13789510868-export const e = 10;",
-          "signature": false,
+          "signature": "-4822840506-export declare const e = 10;\n",
           "impliedFormat": 1
         },
         "version": "-13789510868-export const e = 10;",
+        "signature": "-4822840506-export declare const e = 10;\n",
         "impliedFormat": "commonjs"
       },
       "../../project1/src/a.d.ts": {
         "original": {
           "version": "-3497920574-export declare const a = 10;\n",
-          "signature": false,
           "impliedFormat": 1
         },
         "version": "-3497920574-export declare const a = 10;\n",
+        "signature": "-3497920574-export declare const a = 10;\n",
         "impliedFormat": "commonjs"
       },
       "./f.ts": {
         "original": {
           "version": "-2015135303-import { a } from \"../../project1/src/a\"; export const f = a;",
-          "signature": false,
+          "signature": "-5154070489-export declare const f = 10;\n",
           "impliedFormat": 1
         },
         "version": "-2015135303-import { a } from \"../../project1/src/a\"; export const f = a;",
+        "signature": "-5154070489-export declare const f = 10;\n",
         "impliedFormat": "commonjs"
       },
       "../../project1/src/b.d.ts": {
         "original": {
           "version": "-3829150557-export declare const b = 10;\n",
-          "signature": false,
           "impliedFormat": 1
         },
         "version": "-3829150557-export declare const b = 10;\n",
+        "signature": "-3829150557-export declare const b = 10;\n",
         "impliedFormat": "commonjs"
       },
       "./g.ts": {
         "original": {
           "version": "-2047954019-import { b } from \"../../project1/src/b\"; export const g = b;",
-          "signature": false,
+          "signature": "-5485300472-export declare const g = 10;\n",
           "impliedFormat": 1
         },
         "version": "-2047954019-import { b } from \"../../project1/src/b\"; export const g = b;",
+        "signature": "-5485300472-export declare const g = 10;\n",
         "impliedFormat": "commonjs"
       }
     },
@@ -989,18 +1029,11 @@ exports.d = b_1.b;
       "./g.ts": [
         "../../project1/src/b.d.ts"
       ]
-    },
-    "changeFileSet": [
-      "../../../lib/lib.d.ts",
-      "../../project1/src/a.d.ts",
-      "../../project1/src/b.d.ts",
-      "./e.ts",
-      "./f.ts",
-      "./g.ts"
-    ]
+    }
   },
+  "hasErrors": true,
   "version": "FakeTSVersion",
-  "size": 1369
+  "size": 1419
 }
 
 
@@ -1017,7 +1050,7 @@ Output::
 
 [[90mHH:MM:SS AM[0m] Project 'src/project1/src/tsconfig.json' is up to date because newest input 'src/project1/src/a.ts' is older than output 'src/project1/src/tsconfig.tsbuildinfo'
 
-[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because buildinfo file 'src/project2/src/tsconfig.tsbuildinfo' indicates that some of the changes were not emitted
+[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because buildinfo file 'src/project2/src/tsconfig.tsbuildinfo' indicates that program had errors.
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project2/src/tsconfig.json'...
 
@@ -1074,7 +1107,7 @@ Output::
 
 [[90mHH:MM:SS AM[0m] Project 'src/project1/src/tsconfig.json' is up to date because newest input 'src/project1/src/a.ts' is older than output 'src/project1/src/tsconfig.tsbuildinfo'
 
-[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because buildinfo file 'src/project2/src/tsconfig.tsbuildinfo' indicates that some of the changes were not emitted
+[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because buildinfo file 'src/project2/src/tsconfig.tsbuildinfo' indicates that program had errors.
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project2/src/tsconfig.json'...
 
@@ -1136,7 +1169,7 @@ Output::
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project1/src/tsconfig.json'...
 
-[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because buildinfo file 'src/project2/src/tsconfig.tsbuildinfo' indicates that some of the changes were not emitted
+[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because buildinfo file 'src/project2/src/tsconfig.tsbuildinfo' indicates that program had errors.
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project2/src/tsconfig.json'...
 

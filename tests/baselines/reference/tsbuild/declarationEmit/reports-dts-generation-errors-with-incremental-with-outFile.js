@@ -74,16 +74,28 @@ Output::
 [7m2[0m export const api = ky.extend({});
 [7m [0m [91m             ~~~[0m
 
+TSFILE: /src/project/outFile.js
 lib/lib.d.ts
   Default library for target 'es5'
 src/project/ky.d.ts
   Imported via 'ky' from file 'src/project/src/index.ts'
 src/project/src/index.ts
   Matched by include pattern 'src' in 'src/project/tsconfig.json'
+[[90mHH:MM:SS AM[0m] Updating unchanged output timestamps of project '/src/project/tsconfig.json'...
+
 
 Found 1 error.
 
 exitCode:: ExitStatus.DiagnosticsPresent_OutputsSkipped
+
+
+//// [/src/project/outFile.js]
+define("index", ["require", "exports", "ky"], function (require, exports, ky_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.api = void 0;
+    exports.api = ky_1.default.extend({});
+});
 
 
 
@@ -106,15 +118,19 @@ Output::
 [7m2[0m export const api = ky.extend({});
 [7m [0m [91m             ~~~[0m
 
+TSFILE: /src/project/outFile.js
 lib/lib.d.ts
   Default library for target 'es5'
 src/project/ky.d.ts
   Imported via 'ky' from file 'src/project/src/index.ts'
 src/project/src/index.ts
   Matched by include pattern 'src' in 'src/project/tsconfig.json'
+[[90mHH:MM:SS AM[0m] Updating unchanged output timestamps of project '/src/project/tsconfig.json'...
+
 
 Found 1 error.
 
 exitCode:: ExitStatus.DiagnosticsPresent_OutputsSkipped
 
 
+//// [/src/project/outFile.js] file written with same contents

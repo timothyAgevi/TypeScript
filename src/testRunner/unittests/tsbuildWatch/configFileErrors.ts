@@ -69,4 +69,6 @@ describe("unittests:: tsbuildWatch:: watchMode:: configFileErrors:: reports synt
             },
         ],
     });
+
+    // TODO: sheetal add --out scenario
 });

@@ -55,14 +55,14 @@ Output::
 TSFILE: /src/dist/hello.json
 TSFILE: /src/dist/src/src/index.js
 TSFILE: /src/dist/tsconfig.tsbuildinfo
-[[90mHH:MM:SS AM[0m] Updating unchanged output timestamps of project '/src/tsconfig.json'...
-
 lib/lib.d.ts
   Default library for target 'es5'
 hello.json
   Imported via "../../hello.json" from file 'src/src/index.ts'
 src/src/index.ts
   Matched by include pattern 'src/**/*' in 'src/tsconfig.json'
+[[90mHH:MM:SS AM[0m] Updating unchanged output timestamps of project '/src/tsconfig.json'...
+
 exitCode:: ExitStatus.Success
 
 

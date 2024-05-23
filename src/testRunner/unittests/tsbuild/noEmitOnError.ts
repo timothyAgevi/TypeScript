@@ -119,4 +119,6 @@ const a: string = "hello";`,
         ],
         baselinePrograms: true,
     });
+
+    // TODO:: sheetal: noEmitOnErrors - with and without errors with --out
 });

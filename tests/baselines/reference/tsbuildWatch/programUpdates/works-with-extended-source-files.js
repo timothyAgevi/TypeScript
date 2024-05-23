@@ -1035,7 +1035,7 @@ Before running Timeout callback:: count: 1
 Host is moving to new time
 After running Timeout callback:: count: 0
 Output::
-[[90mHH:MM:SS AM[0m] Project 'project2.tsconfig.json' is out of date because output 'commonFile1.js' is older than input 'alpha.tsconfig.json'
+[[90mHH:MM:SS AM[0m] Project 'project2.tsconfig.json' is out of date because output 'project2.tsconfig.tsbuildinfo' is older than input 'alpha.tsconfig.json'
 
 [[90mHH:MM:SS AM[0m] Building project '/a/b/project2.tsconfig.json'...
 
@@ -1110,7 +1110,7 @@ Output::
 >> Screen clear
 [[90mHH:MM:SS AM[0m] File change detected. Starting incremental compilation...
 
-[[90mHH:MM:SS AM[0m] Project 'project3.tsconfig.json' is out of date because output 'other2.js' is older than input 'extendsConfig2.tsconfig.json'
+[[90mHH:MM:SS AM[0m] Project 'project3.tsconfig.json' is out of date because output 'project3.tsconfig.tsbuildinfo' is older than input 'extendsConfig2.tsconfig.json'
 
 [[90mHH:MM:SS AM[0m] Building project '/a/b/project3.tsconfig.json'...
 

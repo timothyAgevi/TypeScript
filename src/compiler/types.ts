@@ -9560,6 +9560,7 @@ export interface Printer {
 /** @internal */
 export interface BuildInfo {
     program?: ProgramBuildInfo;
+    hasErrors?: boolean;
     version: string;
 }
 

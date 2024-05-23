@@ -333,8 +333,7 @@ export function isBuilderProgram(program: Program | BuilderProgram): program is 
     return !!(program as BuilderProgram).getState;
 }
 
-/** @internal */
-export function listFiles<T extends BuilderProgram>(program: Program | T, write: (s: string) => void) {
+function listFiles<T extends BuilderProgram>(program: Program | T, write: (s: string) => void) {
     const options = program.getCompilerOptions();
     if (options.explainFiles) {
         explainFiles(isBuilderProgram(program) ? program.getProgram() : program, write);
@@ -598,14 +597,15 @@ export function emitFilesAndReportErrors<T extends BuilderProgram>(
     const emitResult = isListFilesOnly
         ? { emitSkipped: true, diagnostics: emptyArray }
         : program.emit(/*targetSourceFile*/ undefined, writeFile, cancellationToken, emitOnlyDtsFiles, customTransformers);
-    const { emittedFiles, diagnostics: emitDiagnostics } = emitResult;
-    addRange(allDiagnostics, emitDiagnostics);
+    addRange(allDiagnostics, emitResult.diagnostics);
 
     const diagnostics = sortAndDeduplicateDiagnostics(allDiagnostics);
     diagnostics.forEach(reportDiagnostic);
     if (write) {
         const currentDir = program.getCurrentDirectory();
-        forEach(emittedFiles, file => {
+        // TODO: sheetal currently tsc -p , tsc -watch also report files like .d.ts that arent really emitted because their signature has not changed.
+        // This now becomes visible in tsc -b because tsc b was using actually written files to disk as a list of files to write on commandline before this change
+        forEach(emitResult.emittedFiles, file => {
             const filepath = getNormalizedAbsolutePath(file, currentDir);
             write(`TSFILE: ${filepath}`);
         });

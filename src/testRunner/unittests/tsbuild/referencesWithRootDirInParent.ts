@@ -1,7 +1,10 @@
 import { dedent } from "../../_namespaces/Utils.js";
 import * as vfs from "../../_namespaces/vfs.js";
 import { jsonToReadableText } from "../helpers.js";
-import { verifyTsc } from "../helpers/tsc.js";
+import {
+    noChangeOnlyRuns,
+    verifyTsc,
+} from "../helpers/tsc.js";
 import {
     loadProjectFromFiles,
     replaceText,
@@ -62,6 +65,7 @@ describe("unittests:: tsbuild:: with rootDir of project reference in parentDirec
         fs: () => projFs,
         commandLineArgs: ["--b", "/src/src/main", "--verbose"],
         modifyFs: fs => replaceText(fs, "/src/tsconfig.base.json", `"rootDir": "./src/",`, ""),
+        edits: noChangeOnlyRuns,
     });
 
     verifyTsc({
@@ -84,6 +88,7 @@ describe("unittests:: tsbuild:: with rootDir of project reference in parentDirec
                 }),
             );
         },
+        edits: noChangeOnlyRuns,
     });
 
     verifyTsc({
@@ -109,4 +114,6 @@ describe("unittests:: tsbuild:: with rootDir of project reference in parentDirec
             );
         },
     });
+
+    // TODO: sheetal add tests for alwaysBuildInfo here to see what happens when the other project is not incremental
 });

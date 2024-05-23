@@ -477,9 +477,22 @@ Output::
     [7m [0m [96m    ~~~[0m
     'bar' is declared here.
 
+[[90mHH:MM:SS AM[0m] Updating unchanged output timestamps of project '/user/username/projects/reexport/src/main/tsconfig.json'...
+
 [[90mHH:MM:SS AM[0m] Found 1 error. Watching for file changes.
 
 
+
+//// [/user/username/projects/reexport/out/main/index.js] file changed its modified time
+//// [/user/username/projects/reexport/out/main/tsconfig.tsbuildinfo]
+{"hasErrors":true,"version":"FakeTSVersion"}
+
+//// [/user/username/projects/reexport/out/main/tsconfig.tsbuildinfo.readable.baseline.txt]
+{
+  "hasErrors": true,
+  "version": "FakeTSVersion",
+  "size": 44
+}
 
 
 
@@ -664,7 +677,7 @@ Before running Timeout callback:: count: 1
 Host is moving to new time
 After running Timeout callback:: count: 0
 Output::
-[[90mHH:MM:SS AM[0m] Failed to parse file 'src/main/tsconfig.json': Semantic errors.
+[[90mHH:MM:SS AM[0m] Project 'src/main/tsconfig.json' is out of date because it had errors.
 
 [[90mHH:MM:SS AM[0m] Building project '/user/username/projects/reexport/src/main/tsconfig.json'...
 
@@ -675,8 +688,15 @@ Output::
 
 
 //// [/user/username/projects/reexport/out/main/index.js] file changed its modified time
-//// [/user/username/projects/reexport/out/main/tsconfig.tsbuildinfo] file written with same contents
-//// [/user/username/projects/reexport/out/main/tsconfig.tsbuildinfo.readable.baseline.txt] file written with same contents
+//// [/user/username/projects/reexport/out/main/tsconfig.tsbuildinfo]
+{"version":"FakeTSVersion"}
+
+//// [/user/username/projects/reexport/out/main/tsconfig.tsbuildinfo.readable.baseline.txt]
+{
+  "version": "FakeTSVersion",
+  "size": 27
+}
+
 
 
 Program root files: [

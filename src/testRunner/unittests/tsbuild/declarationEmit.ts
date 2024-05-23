@@ -143,6 +143,14 @@ export function fn4() {
 
     verifyTsc({
         scenario: "declarationEmit",
+        subScenario: "reports dts generation errors without incremental",
+        commandLineArgs: ["-b", `/src/project`, "--explainFiles", "--listEmittedFiles", "--v"],
+        fs: () => getFsForDeclarationEmitWithErrors({ declaration: true }),
+        edits: noChangeOnlyRuns,
+    });
+
+    verifyTsc({
+        scenario: "declarationEmit",
         subScenario: "reports dts generation errors with incremental with outFile",
         commandLineArgs: ["-b", `/src/project`, "--explainFiles", "--listEmittedFiles", "--v"],
         fs: () =>
@@ -150,6 +158,14 @@ export function fn4() {
                 incremental: true,
                 declaration: true,
             }),
+        edits: noChangeOnlyRuns,
+    });
+
+    verifyTsc({
+        scenario: "declarationEmit",
+        subScenario: "reports dts generation errors without incremental with outFile",
+        commandLineArgs: ["-b", `/src/project`, "--explainFiles", "--listEmittedFiles", "--v"],
+        fs: () => getFsForDeclarationEmitWithErrorsWithOutFile({ declaration: true }),
         edits: noChangeOnlyRuns,
     });
 });

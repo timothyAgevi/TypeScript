@@ -96,4 +96,6 @@ describe("unittests:: tsbuild:: configFileErrors:: reports syntax errors in conf
             },
         ],
     });
+
+    // TODO: sheetal add --out scenario
 });

@@ -38,6 +38,20 @@ Output::
 
 
 
+//// [/user/username/projects/myproject/index.js]
+var fn = function (a, b) { return b; };
+
+
+//// [/user/username/projects/myproject/tsconfig.tsbuildinfo]
+{"hasErrors":true,"version":"FakeTSVersion"}
+
+//// [/user/username/projects/myproject/tsconfig.tsbuildinfo.readable.baseline.txt]
+{
+  "hasErrors": true,
+  "version": "FakeTSVersion",
+  "size": 44
+}
+
 
 PolledWatches::
 /a/lib/package.json: *new*
@@ -115,19 +129,6 @@ Output::
 [[90mHH:MM:SS AM[0m] Found 0 errors. Watching for file changes.
 
 
-
-//// [/user/username/projects/myproject/index.js]
-var fn = function (a, b) { return b; };
-
-
-//// [/user/username/projects/myproject/tsconfig.tsbuildinfo]
-{"version":"FakeTSVersion"}
-
-//// [/user/username/projects/myproject/tsconfig.tsbuildinfo.readable.baseline.txt]
-{
-  "version": "FakeTSVersion",
-  "size": 27
-}
 
 
 

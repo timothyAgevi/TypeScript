@@ -37,4 +37,6 @@ describe("unittests:: tsbuild:: noEmit", () => {
 
     verifyNoEmit("syntax errors", `const a = "hello`);
     verifyNoEmit("semantic errors", `const a: number = "hello"`);
+
+    // TODO:: sheetal: noEmit - with and without errors with --out
 });

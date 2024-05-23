@@ -358,6 +358,17 @@ Output::
 
 
 
+//// [/user/username/projects/sample1/App/app.js] file written with same contents
+//// [/user/username/projects/sample1/App/tsconfig.tsbuildinfo]
+{"hasErrors":true,"version":"FakeTSVersion"}
+
+//// [/user/username/projects/sample1/App/tsconfig.tsbuildinfo.readable.baseline.txt]
+{
+  "hasErrors": true,
+  "version": "FakeTSVersion",
+  "size": 44
+}
+
 
 
 Program root files: [
@@ -523,8 +534,15 @@ Output::
 
 
 //// [/user/username/projects/sample1/App/app.js] file written with same contents
-//// [/user/username/projects/sample1/App/tsconfig.tsbuildinfo] file written with same contents
-//// [/user/username/projects/sample1/App/tsconfig.tsbuildinfo.readable.baseline.txt] file written with same contents
+//// [/user/username/projects/sample1/App/tsconfig.tsbuildinfo]
+{"version":"FakeTSVersion"}
+
+//// [/user/username/projects/sample1/App/tsconfig.tsbuildinfo.readable.baseline.txt]
+{
+  "version": "FakeTSVersion",
+  "size": 27
+}
+
 
 
 Program root files: [

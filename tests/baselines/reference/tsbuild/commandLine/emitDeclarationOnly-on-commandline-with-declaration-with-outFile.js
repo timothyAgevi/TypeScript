@@ -164,6 +164,28 @@ declare module "d" {
   "size": 27
 }
 
+//// [/src/project2/outFile.d.ts]
+declare module "e" {
+    export const e = 10;
+}
+declare module "f" {
+    export const f = 10;
+}
+declare module "g" {
+    export const g = 10;
+}
+
+
+//// [/src/project2/outFile.tsbuildinfo]
+{"hasErrors":true,"version":"FakeTSVersion"}
+
+//// [/src/project2/outFile.tsbuildinfo.readable.baseline.txt]
+{
+  "hasErrors": true,
+  "version": "FakeTSVersion",
+  "size": 44
+}
+
 
 
 Change:: no-change-run
@@ -178,7 +200,7 @@ Output::
 
 [[90mHH:MM:SS AM[0m] Project 'src/project1/src/tsconfig.json' is up to date because newest input 'src/project1/src/d.ts' is older than output 'src/project1/outFile.d.ts'
 
-[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because output file 'src/project2/outFile.tsbuildinfo' does not exist
+[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because buildinfo file 'src/project2/outFile.tsbuildinfo' indicates that program had errors.
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project2/src/tsconfig.json'...
 
@@ -221,6 +243,9 @@ No cached semantic diagnostics in the builder::
 No shapes updated in the builder::
 
 
+//// [/src/project2/outFile.d.ts] file written with same contents
+//// [/src/project2/outFile.tsbuildinfo] file written with same contents
+//// [/src/project2/outFile.tsbuildinfo.readable.baseline.txt] file written with same contents
 
 
 Change:: local change
@@ -240,7 +265,7 @@ Output::
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project1/src/tsconfig.json'...
 
-[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because output file 'src/project2/outFile.tsbuildinfo' does not exist
+[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because buildinfo file 'src/project2/outFile.tsbuildinfo' indicates that program had errors.
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project2/src/tsconfig.json'...
 
@@ -312,6 +337,9 @@ No shapes updated in the builder::
 //// [/src/project1/outFile.d.ts] file written with same contents
 //// [/src/project1/outFile.tsbuildinfo] file written with same contents
 //// [/src/project1/outFile.tsbuildinfo.readable.baseline.txt] file written with same contents
+//// [/src/project2/outFile.d.ts] file written with same contents
+//// [/src/project2/outFile.tsbuildinfo] file written with same contents
+//// [/src/project2/outFile.tsbuildinfo.readable.baseline.txt] file written with same contents
 
 
 Change:: non local change
@@ -331,7 +359,7 @@ Output::
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project1/src/tsconfig.json'...
 
-[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because output file 'src/project2/outFile.tsbuildinfo' does not exist
+[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because buildinfo file 'src/project2/outFile.tsbuildinfo' indicates that program had errors.
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project2/src/tsconfig.json'...
 
@@ -418,6 +446,9 @@ declare module "d" {
 
 //// [/src/project1/outFile.tsbuildinfo] file written with same contents
 //// [/src/project1/outFile.tsbuildinfo.readable.baseline.txt] file written with same contents
+//// [/src/project2/outFile.d.ts] file written with same contents
+//// [/src/project2/outFile.tsbuildinfo] file written with same contents
+//// [/src/project2/outFile.tsbuildinfo.readable.baseline.txt] file written with same contents
 
 
 Change:: emit js files
@@ -434,7 +465,7 @@ Output::
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project1/src/tsconfig.json'...
 
-[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because output file 'src/project2/outFile.tsbuildinfo' does not exist
+[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because buildinfo file 'src/project2/outFile.tsbuildinfo' indicates that program had errors.
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project2/src/tsconfig.json'...
 
@@ -535,6 +566,30 @@ define("d", ["require", "exports", "b"], function (require, exports, b_1) {
 
 //// [/src/project1/outFile.tsbuildinfo] file written with same contents
 //// [/src/project1/outFile.tsbuildinfo.readable.baseline.txt] file written with same contents
+//// [/src/project2/outFile.d.ts] file written with same contents
+//// [/src/project2/outFile.js]
+define("e", ["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.e = void 0;
+    exports.e = 10;
+});
+define("f", ["require", "exports", "a"], function (require, exports, a_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.f = void 0;
+    exports.f = a_1.a;
+});
+define("g", ["require", "exports", "b"], function (require, exports, b_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.g = void 0;
+    exports.g = b_1.b;
+});
+
+
+//// [/src/project2/outFile.tsbuildinfo] file written with same contents
+//// [/src/project2/outFile.tsbuildinfo.readable.baseline.txt] file written with same contents
 
 
 Change:: no-change-run
@@ -549,7 +604,7 @@ Output::
 
 [[90mHH:MM:SS AM[0m] Project 'src/project1/src/tsconfig.json' is up to date because newest input 'src/project1/src/a.ts' is older than output 'src/project1/outFile.d.ts'
 
-[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because output file 'src/project2/outFile.tsbuildinfo' does not exist
+[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because buildinfo file 'src/project2/outFile.tsbuildinfo' indicates that program had errors.
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project2/src/tsconfig.json'...
 
@@ -592,6 +647,9 @@ No cached semantic diagnostics in the builder::
 No shapes updated in the builder::
 
 
+//// [/src/project2/outFile.d.ts] file written with same contents
+//// [/src/project2/outFile.tsbuildinfo] file written with same contents
+//// [/src/project2/outFile.tsbuildinfo.readable.baseline.txt] file written with same contents
 
 
 Change:: js emit with change without emitDeclarationOnly
@@ -611,7 +669,7 @@ Output::
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project1/src/tsconfig.json'...
 
-[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because output file 'src/project2/outFile.tsbuildinfo' does not exist
+[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because buildinfo file 'src/project2/outFile.tsbuildinfo' indicates that program had errors.
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project2/src/tsconfig.json'...
 
@@ -713,6 +771,10 @@ define("d", ["require", "exports", "b"], function (require, exports, b_1) {
 
 //// [/src/project1/outFile.tsbuildinfo] file written with same contents
 //// [/src/project1/outFile.tsbuildinfo.readable.baseline.txt] file written with same contents
+//// [/src/project2/outFile.d.ts] file written with same contents
+//// [/src/project2/outFile.js] file written with same contents
+//// [/src/project2/outFile.tsbuildinfo] file written with same contents
+//// [/src/project2/outFile.tsbuildinfo.readable.baseline.txt] file written with same contents
 
 
 Change:: local change
@@ -732,7 +794,7 @@ Output::
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project1/src/tsconfig.json'...
 
-[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because output file 'src/project2/outFile.tsbuildinfo' does not exist
+[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because buildinfo file 'src/project2/outFile.tsbuildinfo' indicates that program had errors.
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project2/src/tsconfig.json'...
 
@@ -804,6 +866,9 @@ No shapes updated in the builder::
 //// [/src/project1/outFile.d.ts] file written with same contents
 //// [/src/project1/outFile.tsbuildinfo] file written with same contents
 //// [/src/project1/outFile.tsbuildinfo.readable.baseline.txt] file written with same contents
+//// [/src/project2/outFile.d.ts] file written with same contents
+//// [/src/project2/outFile.tsbuildinfo] file written with same contents
+//// [/src/project2/outFile.tsbuildinfo.readable.baseline.txt] file written with same contents
 
 
 Change:: non local change
@@ -823,7 +888,7 @@ Output::
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project1/src/tsconfig.json'...
 
-[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because output file 'src/project2/outFile.tsbuildinfo' does not exist
+[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because buildinfo file 'src/project2/outFile.tsbuildinfo' indicates that program had errors.
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project2/src/tsconfig.json'...
 
@@ -911,6 +976,9 @@ declare module "d" {
 
 //// [/src/project1/outFile.tsbuildinfo] file written with same contents
 //// [/src/project1/outFile.tsbuildinfo.readable.baseline.txt] file written with same contents
+//// [/src/project2/outFile.d.ts] file written with same contents
+//// [/src/project2/outFile.tsbuildinfo] file written with same contents
+//// [/src/project2/outFile.tsbuildinfo.readable.baseline.txt] file written with same contents
 
 
 Change:: js emit with change without emitDeclarationOnly
@@ -930,7 +998,7 @@ Output::
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project1/src/tsconfig.json'...
 
-[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because output file 'src/project2/outFile.tsbuildinfo' does not exist
+[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because buildinfo file 'src/project2/outFile.tsbuildinfo' indicates that program had errors.
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project2/src/tsconfig.json'...
 
@@ -1052,3 +1120,7 @@ define("d", ["require", "exports", "b"], function (require, exports, b_1) {
 
 //// [/src/project1/outFile.tsbuildinfo] file written with same contents
 //// [/src/project1/outFile.tsbuildinfo.readable.baseline.txt] file written with same contents
+//// [/src/project2/outFile.d.ts] file written with same contents
+//// [/src/project2/outFile.js] file written with same contents
+//// [/src/project2/outFile.tsbuildinfo] file written with same contents
+//// [/src/project2/outFile.tsbuildinfo.readable.baseline.txt] file written with same contents

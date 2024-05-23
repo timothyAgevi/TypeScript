@@ -35,12 +35,14 @@ CleanBuild:
       "declaration": true
     },
     "referencedMap": {},
-    "changeFileSet": [
+    "semanticDiagnosticsPerFile": [
       "../lib/lib.d.ts",
       "./a.ts",
       "./b.ts"
-    ]
+    ],
+    "latestChangedDtsFile": "FakeFileName"
   },
+  "hasErrors": true,
   "version": "FakeTSVersion"
 }
 IncrementalBuild:
@@ -75,11 +77,13 @@ IncrementalBuild:
       "composite": true
     },
     "referencedMap": {},
-    "changeFileSet": [
+    "semanticDiagnosticsPerFile": [
       "../lib/lib.d.ts",
       "./a.ts",
       "./b.ts"
-    ]
+    ],
+    "latestChangedDtsFile": "FakeFileName"
   },
+  "hasErrors": true,
   "version": "FakeTSVersion"
 }

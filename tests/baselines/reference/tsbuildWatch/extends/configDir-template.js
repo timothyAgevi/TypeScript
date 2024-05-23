@@ -360,7 +360,7 @@ After running Timeout callback:: count: 0
 Output::
 [[90mHH:MM:SS AM[0m] File change detected. Starting incremental compilation...
 
-[[90mHH:MM:SS AM[0m] Project 'tsconfig.json' is out of date because output 'outDir/main.js' is older than input '../configs/first/tsconfig.json'
+[[90mHH:MM:SS AM[0m] Project 'tsconfig.json' is out of date because output 'outDir/tsconfig.tsbuildinfo' is older than input '../configs/first/tsconfig.json'
 
 [[90mHH:MM:SS AM[0m] Building project '/home/src/projects/myproject/tsconfig.json'...
 
@@ -421,8 +421,6 @@ File '/package.json' does not exist according to earlier cached lookups.
 File '/a/lib/package.json' does not exist.
 File '/a/package.json' does not exist.
 File '/package.json' does not exist according to earlier cached lookups.
-[[90mHH:MM:SS AM[0m] Updating unchanged output timestamps of project '/home/src/projects/myproject/tsconfig.json'...
-
 ../../../../a/lib/lib.d.ts
   Default library for target 'es5'
 types/sometype.ts
@@ -433,6 +431,8 @@ root2/other/sometype2/index.d.ts
   Imported via "other/sometype2" from file 'src/secondary.ts'
 src/secondary.ts
   Matched by include pattern '${configDir}/src' in 'tsconfig.json'
+[[90mHH:MM:SS AM[0m] Updating unchanged output timestamps of project '/home/src/projects/myproject/tsconfig.json'...
+
 [[90mHH:MM:SS AM[0m] Found 0 errors. Watching for file changes.
 
 

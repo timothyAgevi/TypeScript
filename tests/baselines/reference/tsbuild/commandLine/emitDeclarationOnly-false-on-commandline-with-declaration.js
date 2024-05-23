@@ -142,7 +142,13 @@ Program files::
 
 No cached semantic diagnostics in the builder::
 
-No shapes updated in the builder::
+Shape signatures in builder refreshed for::
+/lib/lib.d.ts (used version)
+/src/project2/src/e.ts (computed .d.ts during emit)
+/src/project1/src/a.d.ts (used version)
+/src/project2/src/f.ts (computed .d.ts during emit)
+/src/project1/src/b.d.ts (used version)
+/src/project2/src/g.ts (computed .d.ts during emit)
 
 
 //// [/src/project1/src/a.d.ts]
@@ -170,6 +176,28 @@ export declare const d = 10;
   "size": 27
 }
 
+//// [/src/project2/src/e.d.ts]
+export declare const e = 10;
+
+
+//// [/src/project2/src/f.d.ts]
+export declare const f = 10;
+
+
+//// [/src/project2/src/g.d.ts]
+export declare const g = 10;
+
+
+//// [/src/project2/src/tsconfig.tsbuildinfo]
+{"hasErrors":true,"version":"FakeTSVersion"}
+
+//// [/src/project2/src/tsconfig.tsbuildinfo.readable.baseline.txt]
+{
+  "hasErrors": true,
+  "version": "FakeTSVersion",
+  "size": 44
+}
+
 
 
 Change:: no-change-run
@@ -184,7 +212,7 @@ Output::
 
 [[90mHH:MM:SS AM[0m] Project 'src/project1/src/tsconfig.json' is up to date because newest input 'src/project1/src/d.ts' is older than output 'src/project1/src/a.d.ts'
 
-[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because output file 'src/project2/src/tsconfig.tsbuildinfo' does not exist
+[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because buildinfo file 'src/project2/src/tsconfig.tsbuildinfo' indicates that program had errors.
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project2/src/tsconfig.json'...
 
@@ -223,9 +251,20 @@ Program files::
 
 No cached semantic diagnostics in the builder::
 
-No shapes updated in the builder::
+Shape signatures in builder refreshed for::
+/lib/lib.d.ts (used version)
+/src/project2/src/e.ts (computed .d.ts during emit)
+/src/project1/src/a.d.ts (used version)
+/src/project2/src/f.ts (computed .d.ts during emit)
+/src/project1/src/b.d.ts (used version)
+/src/project2/src/g.ts (computed .d.ts during emit)
 
 
+//// [/src/project2/src/e.d.ts] file written with same contents
+//// [/src/project2/src/f.d.ts] file written with same contents
+//// [/src/project2/src/g.d.ts] file written with same contents
+//// [/src/project2/src/tsconfig.tsbuildinfo] file written with same contents
+//// [/src/project2/src/tsconfig.tsbuildinfo.readable.baseline.txt] file written with same contents
 
 
 Change:: change
@@ -245,7 +284,7 @@ Output::
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project1/src/tsconfig.json'...
 
-[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because output file 'src/project2/src/tsconfig.tsbuildinfo' does not exist
+[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because buildinfo file 'src/project2/src/tsconfig.tsbuildinfo' indicates that program had errors.
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project2/src/tsconfig.json'...
 
@@ -318,7 +357,13 @@ Program files::
 
 No cached semantic diagnostics in the builder::
 
-No shapes updated in the builder::
+Shape signatures in builder refreshed for::
+/lib/lib.d.ts (used version)
+/src/project2/src/e.ts (computed .d.ts during emit)
+/src/project1/src/a.d.ts (used version)
+/src/project2/src/f.ts (computed .d.ts during emit)
+/src/project1/src/b.d.ts (used version)
+/src/project2/src/g.ts (computed .d.ts during emit)
 
 
 //// [/src/project1/src/a.d.ts] file written with same contents
@@ -327,6 +372,11 @@ No shapes updated in the builder::
 //// [/src/project1/src/d.d.ts] file written with same contents
 //// [/src/project1/src/tsconfig.tsbuildinfo] file written with same contents
 //// [/src/project1/src/tsconfig.tsbuildinfo.readable.baseline.txt] file written with same contents
+//// [/src/project2/src/e.d.ts] file written with same contents
+//// [/src/project2/src/f.d.ts] file written with same contents
+//// [/src/project2/src/g.d.ts] file written with same contents
+//// [/src/project2/src/tsconfig.tsbuildinfo] file written with same contents
+//// [/src/project2/src/tsconfig.tsbuildinfo.readable.baseline.txt] file written with same contents
 
 
 Change:: emit js files
@@ -343,7 +393,7 @@ Output::
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project1/src/tsconfig.json'...
 
-[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because output file 'src/project2/src/tsconfig.tsbuildinfo' does not exist
+[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because buildinfo file 'src/project2/src/tsconfig.tsbuildinfo' indicates that program had errors.
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project2/src/tsconfig.json'...
 
@@ -416,7 +466,13 @@ Program files::
 
 No cached semantic diagnostics in the builder::
 
-No shapes updated in the builder::
+Shape signatures in builder refreshed for::
+/lib/lib.d.ts (used version)
+/src/project2/src/e.ts (computed .d.ts during emit)
+/src/project1/src/a.d.ts (used version)
+/src/project2/src/f.ts (computed .d.ts during emit)
+/src/project1/src/b.d.ts (used version)
+/src/project2/src/g.ts (computed .d.ts during emit)
 
 
 //// [/src/project1/src/a.d.ts] file written with same contents
@@ -458,6 +514,34 @@ exports.d = b_1.b;
 
 //// [/src/project1/src/tsconfig.tsbuildinfo] file written with same contents
 //// [/src/project1/src/tsconfig.tsbuildinfo.readable.baseline.txt] file written with same contents
+//// [/src/project2/src/e.d.ts] file written with same contents
+//// [/src/project2/src/e.js]
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.e = void 0;
+exports.e = 10;
+
+
+//// [/src/project2/src/f.d.ts] file written with same contents
+//// [/src/project2/src/f.js]
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.f = void 0;
+var a_1 = require("../../project1/src/a");
+exports.f = a_1.a;
+
+
+//// [/src/project2/src/g.d.ts] file written with same contents
+//// [/src/project2/src/g.js]
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.g = void 0;
+var b_1 = require("../../project1/src/b");
+exports.g = b_1.b;
+
+
+//// [/src/project2/src/tsconfig.tsbuildinfo] file written with same contents
+//// [/src/project2/src/tsconfig.tsbuildinfo.readable.baseline.txt] file written with same contents
 
 
 Change:: no-change-run
@@ -472,7 +556,7 @@ Output::
 
 [[90mHH:MM:SS AM[0m] Project 'src/project1/src/tsconfig.json' is up to date because newest input 'src/project1/src/a.ts' is older than output 'src/project1/src/a.d.ts'
 
-[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because output file 'src/project2/src/tsconfig.tsbuildinfo' does not exist
+[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because buildinfo file 'src/project2/src/tsconfig.tsbuildinfo' indicates that program had errors.
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project2/src/tsconfig.json'...
 
@@ -511,9 +595,20 @@ Program files::
 
 No cached semantic diagnostics in the builder::
 
-No shapes updated in the builder::
+Shape signatures in builder refreshed for::
+/lib/lib.d.ts (used version)
+/src/project2/src/e.ts (computed .d.ts during emit)
+/src/project1/src/a.d.ts (used version)
+/src/project2/src/f.ts (computed .d.ts during emit)
+/src/project1/src/b.d.ts (used version)
+/src/project2/src/g.ts (computed .d.ts during emit)
 
 
+//// [/src/project2/src/e.d.ts] file written with same contents
+//// [/src/project2/src/f.d.ts] file written with same contents
+//// [/src/project2/src/g.d.ts] file written with same contents
+//// [/src/project2/src/tsconfig.tsbuildinfo] file written with same contents
+//// [/src/project2/src/tsconfig.tsbuildinfo.readable.baseline.txt] file written with same contents
 
 
 Change:: no change run with js emit
@@ -528,7 +623,7 @@ Output::
 
 [[90mHH:MM:SS AM[0m] Project 'src/project1/src/tsconfig.json' is up to date because newest input 'src/project1/src/a.ts' is older than output 'src/project1/src/a.js'
 
-[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because output file 'src/project2/src/tsconfig.tsbuildinfo' does not exist
+[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because buildinfo file 'src/project2/src/tsconfig.tsbuildinfo' indicates that program had errors.
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project2/src/tsconfig.json'...
 
@@ -567,9 +662,23 @@ Program files::
 
 No cached semantic diagnostics in the builder::
 
-No shapes updated in the builder::
+Shape signatures in builder refreshed for::
+/lib/lib.d.ts (used version)
+/src/project2/src/e.ts (computed .d.ts during emit)
+/src/project1/src/a.d.ts (used version)
+/src/project2/src/f.ts (computed .d.ts during emit)
+/src/project1/src/b.d.ts (used version)
+/src/project2/src/g.ts (computed .d.ts during emit)
 
 
+//// [/src/project2/src/e.d.ts] file written with same contents
+//// [/src/project2/src/e.js] file written with same contents
+//// [/src/project2/src/f.d.ts] file written with same contents
+//// [/src/project2/src/f.js] file written with same contents
+//// [/src/project2/src/g.d.ts] file written with same contents
+//// [/src/project2/src/g.js] file written with same contents
+//// [/src/project2/src/tsconfig.tsbuildinfo] file written with same contents
+//// [/src/project2/src/tsconfig.tsbuildinfo.readable.baseline.txt] file written with same contents
 
 
 Change:: js emit with change
@@ -589,7 +698,7 @@ Output::
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project1/src/tsconfig.json'...
 
-[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because output file 'src/project2/src/tsconfig.tsbuildinfo' does not exist
+[[90mHH:MM:SS AM[0m] Project 'src/project2/src/tsconfig.json' is out of date because buildinfo file 'src/project2/src/tsconfig.tsbuildinfo' indicates that program had errors.
 
 [[90mHH:MM:SS AM[0m] Building project '/src/project2/src/tsconfig.json'...
 
@@ -662,7 +771,13 @@ Program files::
 
 No cached semantic diagnostics in the builder::
 
-No shapes updated in the builder::
+Shape signatures in builder refreshed for::
+/lib/lib.d.ts (used version)
+/src/project2/src/e.ts (computed .d.ts during emit)
+/src/project1/src/a.d.ts (used version)
+/src/project2/src/f.ts (computed .d.ts during emit)
+/src/project1/src/b.d.ts (used version)
+/src/project2/src/g.ts (computed .d.ts during emit)
 
 
 //// [/src/project1/src/a.d.ts] file written with same contents
@@ -683,3 +798,11 @@ var blocal = 10;
 //// [/src/project1/src/d.js] file written with same contents
 //// [/src/project1/src/tsconfig.tsbuildinfo] file written with same contents
 //// [/src/project1/src/tsconfig.tsbuildinfo.readable.baseline.txt] file written with same contents
+//// [/src/project2/src/e.d.ts] file written with same contents
+//// [/src/project2/src/e.js] file written with same contents
+//// [/src/project2/src/f.d.ts] file written with same contents
+//// [/src/project2/src/f.js] file written with same contents
+//// [/src/project2/src/g.d.ts] file written with same contents
+//// [/src/project2/src/g.js] file written with same contents
+//// [/src/project2/src/tsconfig.tsbuildinfo] file written with same contents
+//// [/src/project2/src/tsconfig.tsbuildinfo.readable.baseline.txt] file written with same contents

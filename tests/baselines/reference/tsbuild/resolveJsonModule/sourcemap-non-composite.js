@@ -55,8 +55,8 @@ Output::
 [[90mHH:MM:SS AM[0m] Building project '/src/tsconfig.json'...
 
 TSFILE: /src/dist/hello.json
-TSFILE: /src/dist/index.js.map
 TSFILE: /src/dist/index.js
+TSFILE: /src/dist/index.js.map
 TSFILE: /src/dist/tsconfig.tsbuildinfo
 lib/lib.d.ts
   Default library for target 'es5'

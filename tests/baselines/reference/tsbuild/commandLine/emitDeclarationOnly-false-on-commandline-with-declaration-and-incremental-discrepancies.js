@@ -182,16 +182,9 @@ CleanBuild:
       "./g.ts": [
         "../../project1/src/b.d.ts"
       ]
-    },
-    "changeFileSet": [
-      "../../../lib/lib.d.ts",
-      "../../project1/src/a.d.ts",
-      "../../project1/src/b.d.ts",
-      "./e.ts",
-      "./f.ts",
-      "./g.ts"
-    ]
+    }
   },
+  "hasErrors": true,
   "version": "FakeTSVersion"
 }
 IncrementalBuild:
@@ -249,15 +242,8 @@ IncrementalBuild:
       "./g.ts": [
         "../../project1/src/b.d.ts"
       ]
-    },
-    "changeFileSet": [
-      "../../../lib/lib.d.ts",
-      "../../project1/src/a.d.ts",
-      "../../project1/src/b.d.ts",
-      "./e.ts",
-      "./f.ts",
-      "./g.ts"
-    ]
+    }
   },
+  "hasErrors": true,
   "version": "FakeTSVersion"
 }

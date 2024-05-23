@@ -5415,7 +5415,7 @@ export function handleNoEmitOptions<T extends BuilderProgram>(
     const options = program.getCompilerOptions();
     if (options.noEmit) {
         // Cache the semantic diagnostics
-        program.getSemanticDiagnostics(sourceFile, cancellationToken);
+        program.getSemanticDiagnostics(sourceFile, cancellationToken); // TODO: sheetal Revisit these
         return sourceFile || options.outFile ?
             emitSkippedWithNoDiagnostics :
             program.emitBuildInfo(writeFile, cancellationToken);
@@ -5429,11 +5429,11 @@ export function handleNoEmitOptions<T extends BuilderProgram>(
         ...program.getOptionsDiagnostics(cancellationToken),
         ...program.getSyntacticDiagnostics(sourceFile, cancellationToken),
         ...program.getGlobalDiagnostics(cancellationToken),
-        ...program.getSemanticDiagnostics(sourceFile, cancellationToken),
+        ...program.getSemanticDiagnostics(sourceFile, cancellationToken), // TODO: sheetal do we get these irrespective of syntax diagnsotics?
     ];
 
     if (diagnostics.length === 0 && getEmitDeclarations(program.getCompilerOptions())) {
-        diagnostics = program.getDeclarationDiagnostics(/*sourceFile*/ undefined, cancellationToken);
+        diagnostics = program.getDeclarationDiagnostics(/*sourceFile*/ undefined, cancellationToken); // Same?
     }
 
     if (!diagnostics.length) return undefined;

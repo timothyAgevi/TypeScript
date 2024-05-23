@@ -337,3 +337,67 @@ Found 1 error.
 exitCode:: ExitStatus.DiagnosticsPresent_OutputsSkipped
 
 
+//// [/src/childResult.d.ts]
+declare module "child" {
+    export function child(): void;
+}
+
+
+//// [/src/childResult.js]
+define("child", ["require", "exports", "../child/child2"], function (require, exports, child2_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.child = child;
+    function child() {
+        (0, child2_1.child2)();
+    }
+});
+
+
+//// [/src/childResult.tsbuildinfo]
+{"program":{"fileNames":["../lib/lib.d.ts","./child/child.ts"],"fileInfos":[{"version":"3858781397-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };","impliedFormat":1},{"version":"-11458139532-import { child2 } from \"../child/child2\";\nexport function child() {\n    child2();\n}\n","impliedFormat":1}],"root":[2],"options":{"composite":true,"module":2,"outFile":"./childResult.js"},"outSignature":"8966811613-declare module \"child\" {\n    export function child(): void;\n}\n","latestChangedDtsFile":"./childResult.d.ts"},"hasErrors":true,"version":"FakeTSVersion"}
+
+//// [/src/childResult.tsbuildinfo.readable.baseline.txt]
+{
+  "program": {
+    "fileNames": [
+      "../lib/lib.d.ts",
+      "./child/child.ts"
+    ],
+    "fileInfos": {
+      "../lib/lib.d.ts": {
+        "original": {
+          "version": "3858781397-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };",
+          "impliedFormat": 1
+        },
+        "version": "3858781397-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };",
+        "impliedFormat": "commonjs"
+      },
+      "./child/child.ts": {
+        "original": {
+          "version": "-11458139532-import { child2 } from \"../child/child2\";\nexport function child() {\n    child2();\n}\n",
+          "impliedFormat": 1
+        },
+        "version": "-11458139532-import { child2 } from \"../child/child2\";\nexport function child() {\n    child2();\n}\n",
+        "impliedFormat": "commonjs"
+      }
+    },
+    "root": [
+      [
+        2,
+        "./child/child.ts"
+      ]
+    ],
+    "options": {
+      "composite": true,
+      "module": 2,
+      "outFile": "./childResult.js"
+    },
+    "outSignature": "8966811613-declare module \"child\" {\n    export function child(): void;\n}\n",
+    "latestChangedDtsFile": "./childResult.d.ts"
+  },
+  "hasErrors": true,
+  "version": "FakeTSVersion",
+  "size": 948
+}
+
