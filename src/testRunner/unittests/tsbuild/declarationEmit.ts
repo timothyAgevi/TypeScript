@@ -1,7 +1,10 @@
 import { dedent } from "../../_namespaces/Utils.js";
 import { FileSet } from "../../_namespaces/vfs.js";
 import { jsonToReadableText } from "../helpers.js";
-import { libContent } from "../helpers/contents.js";
+import {
+    getFsForDeclarationEmitWithErrors,
+    getFsForDeclarationEmitWithErrorsWithOutFile,
+} from "../helpers/declarationEmit.js";
 import {
     noChangeOnlyRuns,
     verifyTsc,
@@ -131,37 +134,21 @@ export function fn4() {
         subScenario: "reports dts generation errors with incremental",
         commandLineArgs: ["-b", `/src/project`, "--explainFiles", "--listEmittedFiles", "--v"],
         fs: () =>
-            loadProjectFromFiles({
-                "/src/project/tsconfig.json": jsonToReadableText({
-                    compilerOptions: {
-                        module: "NodeNext",
-                        moduleResolution: "NodeNext",
-                        incremental: true,
-                        declaration: true,
-                        skipLibCheck: true,
-                        skipDefaultLibCheck: true,
-                    },
-                }),
-                "/src/project/index.ts": dedent`
-                    import ky from 'ky';
-                    export const api = ky.extend({});
-                `,
-                "/src/project/package.json": jsonToReadableText({
-                    type: "module",
-                }),
-                "/src/project/node_modules/ky/distribution/index.d.ts": dedent`
-                   type KyInstance = {
-                        extend(options: Record<string,unknown>): KyInstance;
-                    }
-                    declare const ky: KyInstance;
-                    export default ky;
-                `,
-                "/src/project/node_modules/ky/package.json": jsonToReadableText({
-                    name: "ky",
-                    type: "module",
-                    main: "./distribution/index.js",
-                }),
-                "/lib/lib.esnext.full.d.ts": libContent,
+            getFsForDeclarationEmitWithErrors({
+                incremental: true,
+                declaration: true,
+            }),
+        edits: noChangeOnlyRuns,
+    });
+
+    verifyTsc({
+        scenario: "declarationEmit",
+        subScenario: "reports dts generation errors with incremental with outFile",
+        commandLineArgs: ["-b", `/src/project`, "--explainFiles", "--listEmittedFiles", "--v"],
+        fs: () =>
+            getFsForDeclarationEmitWithErrorsWithOutFile({
+                incremental: true,
+                declaration: true,
             }),
         edits: noChangeOnlyRuns,
     });

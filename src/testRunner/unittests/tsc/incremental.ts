@@ -6,6 +6,10 @@ import {
     compilerOptionsToConfigJson,
     libContent,
 } from "../helpers/contents.js";
+import {
+    getFsForDeclarationEmitWithErrors,
+    getFsForDeclarationEmitWithErrorsWithOutFile,
+} from "../helpers/declarationEmit.js";
 import { getFsForNoEmitOnError } from "../helpers/noEmitOnError.js";
 import {
     noChangeOnlyRuns,
@@ -963,38 +967,21 @@ console.log(a);`,
         scenario: "incremental",
         subScenario: "reports dts generation errors",
         commandLineArgs: ["-p", `/src/project`, "--explainFiles", "--listEmittedFiles"],
-        fs: () =>
-            loadProjectFromFiles({
-                "/src/project/tsconfig.json": jsonToReadableText({
-                    compilerOptions: {
-                        module: "NodeNext",
-                        moduleResolution: "NodeNext",
-                        composite: true,
-                        skipLibCheck: true,
-                        skipDefaultLibCheck: true,
-                    },
-                }),
-                "/src/project/index.ts": dedent`
-                    import ky from 'ky';
-                    export const api = ky.extend({});
-                `,
-                "/src/project/package.json": jsonToReadableText({
-                    type: "module",
-                }),
-                "/src/project/node_modules/ky/distribution/index.d.ts": dedent`
-                   type KyInstance = {
-                        extend(options: Record<string,unknown>): KyInstance;
-                    }
-                    declare const ky: KyInstance;
-                    export default ky;
-                `,
-                "/src/project/node_modules/ky/package.json": jsonToReadableText({
-                    name: "ky",
-                    type: "module",
-                    main: "./distribution/index.js",
-                }),
-                "/lib/lib.esnext.full.d.ts": libContent,
-            }),
+        fs: () => getFsForDeclarationEmitWithErrors({ composite: true }),
+        edits: [
+            noChangeRun,
+            {
+                ...noChangeRun,
+                commandLineArgs: ["-b", `/src/project`, "--explainFiles", "--listEmittedFiles", "-v"],
+            },
+        ],
+    });
+
+    verifyTsc({
+        scenario: "incremental",
+        subScenario: "reports dts generation errors with outFile",
+        commandLineArgs: ["-p", `/src/project`, "--explainFiles", "--listEmittedFiles"],
+        fs: () => getFsForDeclarationEmitWithErrorsWithOutFile({ composite: true }),
         edits: [
             noChangeRun,
             {
