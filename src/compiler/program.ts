@@ -5451,11 +5451,11 @@ export function handleNoEmitOptions<T extends BuilderProgram>(
         ...program.getOptionsDiagnostics(cancellationToken),
         ...program.getSyntacticDiagnostics(sourceFile, cancellationToken),
         ...program.getGlobalDiagnostics(cancellationToken),
-        ...program.getSemanticDiagnostics(sourceFile, cancellationToken),
+        ...program.getSemanticDiagnostics(sourceFile, cancellationToken), // TODO: sheetal do we get these irrespective of syntax diagnsotics?
     ];
 
     if (diagnostics.length === 0 && getEmitDeclarations(program.getCompilerOptions())) {
-        diagnostics = program.getDeclarationDiagnostics(/*sourceFile*/ undefined, cancellationToken);
+        diagnostics = program.getDeclarationDiagnostics(/*sourceFile*/ undefined, cancellationToken); // Same?
     }
 
     if (!diagnostics.length) return undefined;

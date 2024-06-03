@@ -262,6 +262,7 @@ function generateBuildInfoProgramBaseline(sys: ts.System, buildInfoPath: string,
     }
     const version = buildInfo.version === ts.version ? fakes.version : buildInfo.version;
     const result: ReadableBuildInfo = {
+        ...buildInfo,
         program,
         version,
         size: ts.getBuildInfoText({ ...buildInfo, version }).length,
